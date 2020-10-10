@@ -1,3 +1,9 @@
+/*
+ * Warning: This development server was not meant to be used in a production environment.
+ * It can have securiy vulnerabilities, so please make sure that it's not exposed to the internet.
+ * By default, it is restricted to be accessed only from localhost.
+ */
+
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -17,12 +23,13 @@ const getContentType = file => {
 };
 
 const server = http.createServer((req, res) => {
-	console.log(req.url);
+	console.log('Request: ', req.url);
 
 	const file = req.url === '/' ? './index.html' : `.${req.url}`;
 
 	fs.readFile(file, (err, data) => {
 		if (err) {
+			console.error(err);
 			res.writeHead(404);
 			return res.end();
 		}
@@ -31,6 +38,7 @@ const server = http.createServer((req, res) => {
 		const contentLength = data.length;
 
 		res.writeHead(200, {
+			'Cache-Control': 'no-cache',
 			'Content-Length': contentLength,
 			'Content-Type': `${contentType}; charset=UTF-8`,
 		});
@@ -39,13 +47,12 @@ const server = http.createServer((req, res) => {
 	});
 });
 
-server.listen(PORT);
+server.listen({ host: 'localhost', port: PORT });
 
 console.log(`Listening on port ${PORT}...`, '\x1b[33m');
 console.log(
-	`Warning: This development server was not meant to be used in a production environment.`
-);
-console.log(
-	`It can have securiy vulnerabilities, so please make sure that it's not exposed to the internet.`,
+	`Warning: This development server was not meant to be used in a production environment.\n`,
+	`It can have securiy vulnerabilities, so please make sure that it's not exposed to the internet.\n`,
+	`By default, it is restricted to be accessed only from localhost.`,
 	'\x1b[0m'
 );
