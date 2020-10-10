@@ -1,0 +1,20 @@
+{
+  "name": "fuji-hunt-calculator",
+  "version": "1.0.0",
+  "description": "Calculator for mixing Fuji Hunt C-41 photographic chemicals",
+  "main": "src/devserver/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./src/devserver/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andormade/fuji-hunt-calculator.git"
+  },
+  "author": "Andor Polgar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andormade/fuji-hunt-calculator/issues"
+  },
+  "homepage": "https://github.com/andormade/fuji-hunt-calculator#readme"
+}
