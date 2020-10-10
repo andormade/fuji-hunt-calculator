@@ -46,6 +46,6 @@ console.log(
 	`Warning: This development server was not meant to be used in a production environment.`
 );
 console.log(
-	`It can have securiy vulerabilites, so please make sure that it's not exposed to the internet.`,
+	`It can have securiy vulnerabilities, so please make sure that it's not exposed to the internet.`,
 	'\x1b[0m'
 );
