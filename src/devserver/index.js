@@ -5,7 +5,7 @@
  */
 
 const http = require('http');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 const PORT = 1234;
 
@@ -22,18 +22,13 @@ const getContentType = file => {
 	}
 };
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
 	console.log('Request: ', req.url);
 
 	const file = req.url === '/' ? './index.html' : `.${req.url}`;
 
-	fs.readFile(file, (err, data) => {
-		if (err) {
-			console.error(err);
-			res.writeHead(404);
-			return res.end();
-		}
-
+	try {
+		const data = await fs.readFile(file);
 		const contentType = getContentType(file);
 		const contentLength = data.length;
 
@@ -44,7 +39,11 @@ const server = http.createServer((req, res) => {
 		});
 
 		res.end(data);
-	});
+	} catch (err) {
+		console.error(err);
+		res.writeHead(404);
+		return res.end();
+	}
 });
 
 server.listen({ host: 'localhost', port: PORT });

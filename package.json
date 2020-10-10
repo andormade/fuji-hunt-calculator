@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/andormade/fuji-hunt-calculator.git"
   },
+  "engines": {
+    "node": ">=10.22.1"
+  },
   "author": "Andor Polgar",
   "license": "MIT",
   "bugs": {
