@@ -1,0 +1,11 @@
+localized-volume {
+	background: #a8ff00;
+}
+
+.table {
+	display: grid;
+	grid-template-columns: 2fr repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-column-gap: 11px;
+	grid-row-gap: 0px;
+}
