@@ -21,7 +21,6 @@ class LocalizedVolume extends HTMLElement {
 	}
 
 	attributeChangedCallback() {
-		console.log('attrchange');
 		this.connectedCallback();
 	}
 }

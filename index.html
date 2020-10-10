@@ -2,15 +2,6 @@
 <html>
 	<head>
 		<script type="module" src="src/main.js"></script>
-		<script>
-			Array.from(
-				document.getElementsByTagName('localized-volume')
-			).forEach(element => element.setAttribute('target', 'ml'));
-			Array.from(
-				document.getElementsByTagName('localized-temperature')
-			).forEach(element => element.setAttribute('target', 'celsius'));
-		</script>
-
 		<style>
 			localized-volume {
 				background: #a8ff00;
