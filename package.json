@@ -5,7 +5,7 @@
   "main": "src/devserver/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node ./src/devserver/index.js"
+    "dev": "node ./src/devserver"
   },
   "repository": {
     "type": "git",

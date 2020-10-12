@@ -7,7 +7,10 @@
 const http = require('http');
 const fs = require('fs').promises;
 const path = require('path');
+const url = require('url');
+
 const PORT = 1234;
+const INDEX = 'index.html';
 
 const getContentType = file => {
 	switch (path.extname(file)) {
@@ -25,7 +28,8 @@ const getContentType = file => {
 const server = http.createServer(async (req, res) => {
 	console.log('Request: ', req.url);
 
-	const file = req.url === '/' ? './index.html' : `.${req.url}`;
+	const { pathname } = url.parse(req.url);
+	const file = pathname.endsWith('/') ? `.${pathname}${INDEX}` : `.${pathname}`;
 
 	try {
 		const data = await fs.readFile(file);
