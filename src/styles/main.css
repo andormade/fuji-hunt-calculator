@@ -1,3 +1,7 @@
+html, body {
+	font-family: sans-serif;
+}
+
 localized-volume {
 	background: #a8ff00;
 }

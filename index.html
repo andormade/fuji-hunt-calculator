@@ -4,10 +4,7 @@
 		<title>
 			Fuji Hunt C-41 calculator
 		</title>
-		<meta
-			name="description"
-			content="Calculator for mixing Fuji Hunt C-41 photographic chemicals"
-		/>
+		<meta name="description" content="Calculator for mixing Fuji Hunt C-41 photographic chemicals" />
 		<meta charset="utf-8" />
 		<script type="module" src="src/main.js"></script>
 		<link rel="stylesheet" href="src/styles/main.css" />
@@ -17,23 +14,57 @@
 		/>
 	</head>
 	<body>
+		<p>
+			Measurement units:
+			<select name="units" id="units">
+				<option value="metric" selected="selected">Metric</option>
+				<option value="imperial">Imperial</option>
+			</select>
+		</p>
+		<p>
+			To make
+			<select name="volume" id="volume">
+				<option value="0.5">250 ml</option>
+				<option value="1" selected="selected">500 ml</option>
+				<option value="2">1 l</option>
+				<option value="4">2 l</option>
+			</select>
+		</p>
+		<h2>Mixing the chemicals 👩‍🔬</h2>
 		<div class="table">
 			<div>Developer</div>
 			<div>
-				Water <localized-temperature celsius="20" /> -
-				<localized-temperature celsius="30" />
-				<localized-volume ml="450" />
+				<strong>Water</strong>
+				<p>🌡️ <localized-temperature celsius="20" /> -<localized-temperature celsius="30" /></p>
+				<p>⚗️ <localized-volume ml="450" /></p>
 			</div>
-			<div>Part A <localized-volume ml="35" /></div>
-			<div>Part B <localized-volume ml="4.5" /></div>
-			<div>Part C <localized-volume ml="9" /></div>
+			<div>
+				<strong>Part A</strong>
+				<p><localized-volume ml="35" /></p>
+				<p>Stir for 30 seconds after pouring the compound</p>
+			</div>
+
+			<div>
+				<strong>Part B </strong>
+				<p><localized-volume ml="4.5" /></p>
+				<p>Stir for 30 seconds after pouring the compound</p>
+			</div>
+
+			<div>
+				<strong>Part C</strong>
+				<p><localized-volume ml="9" /></p>
+				<p>Stir for 30 seconds after pouring the compound</p>
+			</div>
 			<div>Water <localized-volume ml="1.5" /></div>
 
 			<div>Bleach</div>
 			<div>
-				Water <localized-temperature celsius="20" /> -
-				<localized-temperature celsius="30" />
-				<localized-volume ml="250" />
+				<p>Water</p>
+				<p>
+					<localized-temperature celsius="20" /> -
+					<localized-temperature celsius="30" />
+				</p>
+				<p><localized-volume ml="250" /></p>
 			</div>
 			<div>Bleach <localized-volume ml="250" /></div>
 			<div></div>

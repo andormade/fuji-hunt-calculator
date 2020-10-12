@@ -1,15 +1,14 @@
 class LocalizedTemperature extends HTMLElement {
 	connectedCallback() {
 		const celsius = parseInt(this.getAttribute('celsius'), 10);
-
-		const target = this.getAttribute('target');
+		const unit = this.getAttribute('unit') || 'metric';
 		const fahrenheit = (celsius * 9) / 5 + 32;
 
-		switch (target) {
-			case 'celsius':
+		switch (unit) {
+			case 'metric':
 				this.innerHTML = `${celsius} °C`;
 				break;
-			case 'fahrenheit':
+			case 'imperial':
 				this.innerHTML = `${fahrenheit} °F`;
 				break;
 			default:
@@ -18,7 +17,7 @@ class LocalizedTemperature extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['target'];
+		return ['unit'];
 	}
 
 	attributeChangedCallback() {

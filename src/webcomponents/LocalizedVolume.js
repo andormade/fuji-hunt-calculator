@@ -1,14 +1,16 @@
 class LocalizedVolume extends HTMLElement {
 	connectedCallback() {
-		const ml = parseInt(this.getAttribute('ml'), 10);
-		const target = this.getAttribute('target');
-		const oz = ml / 29.574;
+		const multiplier = parseFloat(this.getAttribute('multiplier')) || 1;
+		const ml = parseInt(this.getAttribute('ml'), 10) * multiplier;
+		const unit = this.getAttribute('unit') || 'metric';
+		const oz = (ml / 29.574) ;
 
-		switch (target) {
-			case 'ml':
+
+		switch (unit) {
+			case 'metric':
 				this.innerHTML = `${ml} ml`;
 				break;
-			case 'oz':
+			case 'imperial':
 				this.innerHTML = `${oz} oz`;
 				break;
 			default:
@@ -17,7 +19,7 @@ class LocalizedVolume extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ['target'];
+		return ['unit', 'multiplier'];
 	}
 
 	attributeChangedCallback() {
