@@ -19,6 +19,7 @@
 			<select name="units" id="units">
 				<option value="metric" selected="selected">Metric</option>
 				<option value="imperial">Imperial</option>
+				<option value="us">US customary</option>
 			</select>
 		</p>
 		<p>
@@ -28,6 +29,8 @@
 				<option value="1" selected="selected">500 ml</option>
 				<option value="2">1 l</option>
 				<option value="4">2 l</option>
+				<option value="8">4 l</option>
+				<option value="10">5 l</option>
 			</select>
 		</p>
 		<h2>Mixing the chemicals 👩‍🔬</h2>
@@ -35,7 +38,7 @@
 			<div>Developer</div>
 			<div>
 				<strong>Water</strong>
-				<p>🌡️ <localized-temperature celsius="20" /> -<localized-temperature celsius="30" /></p>
+				<p>🌡️ <localized-temperature celsius="20" /> - <localized-temperature celsius="30" /></p>
 				<p>⚗️ <localized-volume ml="450" /></p>
 			</div>
 			<div>
@@ -55,7 +58,11 @@
 				<p><localized-volume ml="9" /></p>
 				<p>Stir for 30 seconds after pouring the compound</p>
 			</div>
-			<div>Water <localized-volume ml="1.5" /></div>
+			<div>
+				<strong>Water</strong>
+				<p><localized-volume ml="1.5" /></p>
+				<p>Stir for 1 minute after adding water</p>
+			</div>
 
 			<div>Bleach</div>
 			<div>
@@ -72,9 +79,10 @@
 			<div></div>
 			<div>Fixer</div>
 			<div>
-				Water <localized-temperature celsius="20" /> -
-				<localized-temperature celsius="30" />
-				<localized-volume ml="400" />
+				<strong>Water</strong>
+				<p><localized-temperature celsius="20" /> -
+				<localized-temperature celsius="30" /></p>
+				<p><localized-volume ml="400" /></p>
 			</div>
 			<div>Fixer <localized-volume ml="100" /></div>
 			<div></div>
