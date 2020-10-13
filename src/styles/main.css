@@ -13,3 +13,12 @@ localized-volume {
 	grid-column-gap: 11px;
 	grid-row-gap: 0px;
 }
+
+.noscriptmsg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: red;
+}

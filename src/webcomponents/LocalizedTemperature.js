@@ -1,20 +1,6 @@
 class LocalizedTemperature extends HTMLElement {
 	connectedCallback() {
-		const celsius = parseFloat(this.getAttribute('celsius'));
-		const unit = this.getAttribute('unit') || 'metric';
-		const fahrenheit = (celsius * 9) / 5 + 32;
-
-		switch (unit) {
-			case 'metric':
-				this.innerHTML = `${celsius} °C`;
-				break;
-			case 'imperial':
-			case 'us':
-				this.innerHTML = `${fahrenheit} °F`;
-				break;
-			default:
-				this.innerHTML = `${celsius}`;
-		}
+		this.celsius = parseFloat(this.textContent);
 	}
 
 	static get observedAttributes() {
@@ -22,7 +8,17 @@ class LocalizedTemperature extends HTMLElement {
 	}
 
 	attributeChangedCallback() {
-		this.connectedCallback();
+		const unit = this.getAttribute('unit') || 'metric';
+		const fahrenheit = (this.celsius * 9) / 5 + 32;
+
+		switch (unit) {
+			case 'imperial':
+			case 'us':
+				this.innerHTML = `${fahrenheit} °F`;
+				break;
+			default:
+				this.innerHTML = `${this.celsius} °C`;
+		}
 	}
 }
 

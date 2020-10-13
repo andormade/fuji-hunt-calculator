@@ -14,6 +14,12 @@
 		/>
 	</head>
 	<body>
+		<noscript>
+			<div class="noscriptmsg">
+				You don't have javascript enabled.
+			</div>
+		</noscript>
+
 		<p>
 			Measurement units:
 			<select name="units" id="units">
@@ -29,6 +35,7 @@
 				<option value="1" selected="selected">500 ml</option>
 				<option value="2">1 l</option>
 				<option value="4">2 l</option>
+				<option value="6">3 l</option>
 				<option value="8">4 l</option>
 				<option value="10">5 l</option>
 			</select>
@@ -38,29 +45,32 @@
 			<div>Developer</div>
 			<div>
 				<strong>Water</strong>
-				<p>🌡️ <localized-temperature celsius="20" /> - <localized-temperature celsius="30" /></p>
-				<p>⚗️ <localized-volume ml="450" /></p>
+				<p>
+					🌡️ <localized-temperature>20 °C</localized-temperature> -
+					<localized-temperature>30 °C</localized-temperature>
+				</p>
+				<p>⚗️ <localized-volume>450 ml</localized-volume></p>
 			</div>
 			<div>
 				<strong>Part A</strong>
-				<p><localized-volume ml="35" /></p>
+				<p><localized-volume>35 ml</localized-volume></p>
 				<p>Stir for 30 seconds after pouring the compound</p>
 			</div>
 
 			<div>
 				<strong>Part B </strong>
-				<p><localized-volume ml="4.5" /></p>
+				<p><localized-volume>4.5 ml</localized-volume></p>
 				<p>Stir for 30 seconds after pouring the compound</p>
 			</div>
 
 			<div>
 				<strong>Part C</strong>
-				<p><localized-volume ml="9" /></p>
+				<p><localized-volume>9 ml</localized-volume></p>
 				<p>Stir for 30 seconds after pouring the compound</p>
 			</div>
 			<div>
 				<strong>Water</strong>
-				<p><localized-volume ml="1.5" /></p>
+				<p><localized-volume>1.5 ml</localized-volume></p>
 				<p>Stir for 1 minute after adding water</p>
 			</div>
 
@@ -68,34 +78,36 @@
 			<div>
 				<p>Water</p>
 				<p>
-					<localized-temperature celsius="20" /> -
-					<localized-temperature celsius="30" />
+					<localized-temperature>20 °C</localized-temperature> -
+					<localized-temperature>30 °C</localized-temperature>
 				</p>
-				<p><localized-volume ml="250" /></p>
+				<p><localized-volume>250 ml</localized-volume></p>
 			</div>
-			<div>Bleach <localized-volume ml="250" /></div>
+			<div>Bleach <localized-volume>250 ml</localized-volume></div>
 			<div></div>
 			<div></div>
 			<div></div>
 			<div>Fixer</div>
 			<div>
 				<strong>Water</strong>
-				<p><localized-temperature celsius="20" /> -
-				<localized-temperature celsius="30" /></p>
-				<p><localized-volume ml="400" /></p>
+				<p>
+					<localized-temperature>20 °C</localized-temperature> -
+					<localized-temperature>30 °C</localized-temperature>
+				</p>
+				<p><localized-volume>400 ml</localized-volume></p>
 			</div>
-			<div>Fixer <localized-volume ml="100" /></div>
+			<div>Fixer <localized-volume>100 ml</localized-volume></div>
 			<div></div>
 			<div></div>
 			<div></div>
 			<div>Stabiliser</div>
 			<div>
-				Water <localized-temperature celsius="20" /> -
-				<localized-temperature celsius="30" />
-				<localized-volume ml="490" />
+				Water <localized-temperature>20 °C</localized-temperature> -
+				<localized-temperature>30 °C</localized-temperature>
+				<localized-volume>490 ml</localized-volume>
 			</div>
-			<div>Stabiliser <localized-volume ml="5" /></div>
-			<div>Water <localized-volume ml="5" /></div>
+			<div>Stabiliser <localized-volume>5 ml</localized-volume></div>
+			<div>Water <localized-volume>5 ml</localized-volume></div>
 			<div></div>
 			<div></div>
 		</div>
