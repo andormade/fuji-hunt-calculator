@@ -1,8 +1,10 @@
 import LocalizedTemperature from './webcomponents/LocalizedTemperature.js';
 import LocalizedVolume from './webcomponents/LocalizedVolume.js';
+import Timer from './webcomponents/Timer.js';
 
 customElements.define('localized-temperature', LocalizedTemperature);
 customElements.define('localized-volume', LocalizedVolume);
+customElements.define('timer-component', Timer);
 
 window.addEventListener('DOMContentLoaded', event => {
 	const unitElements = [
