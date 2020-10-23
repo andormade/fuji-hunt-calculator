@@ -1,33 +1,92 @@
-html, body {
+@import "reset.css";
+
+html {
+	font-size: 62.5%;
+}
+
+body {
 	font-family: sans-serif;
+	font-size: 1.6rem;
+	padding: 1rem;
 }
 
-localized-volume {
-	background: #a8ff00;
+
+h3 {
+	font-size: 2rem;
+	display: : block;
+	font-weight: bold;
 }
 
-.table {
-	display: grid;
-	grid-template-columns: 2fr repeat(5, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-	grid-column-gap: 11px;
-	grid-row-gap: 0px;
+p {
+	padding: 1rem 0;
 }
 
-.table-3 {
-	display: grid;
-	grid-template-columns: 2fr repeat(2, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	grid-column-gap: 11px;
-	grid-row-gap: 0px;
+strong {
+	font-weight: bold;
 }
 
+.mixing {}
+
+.recipe {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.recipe-a {
+	--compound-background-color: #eeffee;
+	--compound-text-color: #336633;
+	--compound-volume-background-color: #99cc99;
+	--compound-volume-text-color: #ffffff;
+	--compound-volume-text-shadow-color: #003300;
+	--compount-name-color: #003300;
+}
+
+.recipe-b {
+	--compound-background-color: #ffeeee;
+	--compound-text-color: #663333;
+	--compound-volume-background-color: #cc9999;
+	--compound-volume-text-color: #ffffff;
+	--compound-volume-text-shadow-color: #330000;
+	--compount-name-color: #330000;
+}
+
+.recipe-c {
+	--compound-background-color: #eeeeff;
+	--compound-text-color: #333366;
+	--compound-volume-background-color: #9999cc;
+	--compound-volume-text-color: #ffffff;
+	--compound-volume-text-shadow-color: #000033;
+	--compount-name-color: #000033;
+}
+
+.recipe strong {
+	color: var(--compount-name-color);
+}
+
+.recipe div {
+	background: var(--compound-background-color);
+	border-radius: 1rem;
+	color: var(--compound-text-color);
+	margin: 0.5rem;
+	max-width: 30rem;
+	min-width: 20rem;
+	padding: 1rem;
+}
+
+.recipe localized-volume {
+	background: var(--compound-volume-background-color);
+	border-radius: 0.5rem;
+	color: var(--compound-volume-text-color);
+	font-weight: bold;
+	padding: 0.5rem;
+	text-shadow: 1px 1px 0 var(--compount-volume-text-shadow-color);
+}
 
 .noscriptmsg {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
 	background: red;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
 }
